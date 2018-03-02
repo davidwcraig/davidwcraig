@@ -25,6 +25,38 @@ down:
 <p>It looks strangely familiar but you can't think of any function to try. But
 you do remember that functions can be written as power series: </p> 
 
-` f(x) = sum_(n = 0)^00 a_n x^n. `
+<p>` f(x) = sum_(n = 0)^oo a_n x^n. `
+</p>
+<p>You think, well, I can deal with this one or two terms at a time.<footnote>You
+are now following in the footsteps of Isaac Newton.</footnote>
+</p>
+<p>` y'(x) = dy/dx = sum_(n=1)^oo n a_n x^(n-1) `
+</p>
+<p>` y''(x) = (d^2 y)/(dx^2) = sum_(n=2)^oo n (n - 1) a_n x^(n-2) `
+</p>
+<p>Plug this into the differential equation:
+</p>
+<p>` sum_(n=2)^oo n (n - 1) a_n x^(n-2) + sum_(n = 0)^oo a_n x^n = 0 `
+</p>
+<p>Now you want the powers `x^n` to all match up, so you substitute
+`n+2` for `n` in the first sum, shifting the indices:
+</p>
+<p>` sum_(n=0)^oo (n+2) (n + 1) a_(n+2) x^n + sum_(n = 0)^oo a_n x^n = 0 `
+</p>
+<p>Group:
+</p>
+<p>` sum_(n=0)^oo [ (n+2)(n+1) a_(n+2) + a_n ] x^n = 0`
+</p>
+<p>In order for this to be zero, the following quantity must vanish:
+</p>
+<p>` (n+2)(n+1)a_(n+2) + a_n = 0. `
+</p>
+<p>This is known as a _recurrence relation._ Also note that in this case, the
+terms that are related are spaced two apart in index, so we will have to treat
+odd and even cases separately (starting one set from `a_0` and one set from
+`a_1`).  First we can rearrange the recurrence relation thusly:
+</p>
+<p>` a_(n+2) = - (a_n)/((n+2)(n+1)). `
+</p>
 
 </body> </html>
