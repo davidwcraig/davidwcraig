@@ -6,7 +6,7 @@
 <body>
 
 <h1>A bit of math</h1>
-
+<h2>Heat flow</h2>
 <p>
 The flow of heat through a medium can be described by a flux vector `vec F`,
 whose direction gives the direction of the heat flow and whose magnitude gives
@@ -24,9 +24,41 @@ In terms of these quantities we can write two different but equal expressions
 for the rate of change with time `t` of the heat `Q` in a volume `V`:
 </p>
 <p>
-`(dQ)/(dt) = int_V d^3 x c rho (del T)/(del t) = - int_S d vec A * vec F`
+`(dQ)/(dt) = int_V d^3 x ~ c rho (del T)/(del t) = - int_S d vec A * vec F`
 </p>
 
-
+<h2> The wave equation </h2>
+<p>
+Consider a string of mass per unit length `sigma`, under tension `T`, stretched
+along the `x`-axis and then subjected to a <em>transverse</em> displacement
+`u(x,t)`.
+</p><p>
+Newton's second law, applied to the transverse motion of a small length `dx` of
+the string, assumes the form
+</p><p>
+`(T sin theta)_(x+dx) - (T sin theta)_x = sigma dx (del^2 u)/(del^2 t) . `
+</p><p>
+For a <strong>sufficiently small displacement</strong> `u`, such that 
+`(del u)/(del x) lt lt 1`, we can approximate `sin theta approx tan theta approx
+(del u)/del x)`  and the transverse component of the force in the string is
+given by
+</p><p>
+`T sin theta approx T (del u)/(del x) . `
+</p><p>
+Newton's second law then simplifies to
+</p><p>
+` (del)/(del x) (T (del u)/(del x) ) = sigma (del^2 u)/(del t^2) . `
+</p><p>
+If there is no longitudinal motion of the string, `T = "constant" ` and we
+obtain the one-dimensional wave equation,
+</p><p>
+` (del^2 u)/(del x^2) = 1/(c^2) (del^2 u)/(del t^2) ,'
+</p><p>
+where
+</p><p>
+` c = sqrt( T / c ) ` 
+</p><p>
+is the velocity of waves in the string. 
+</p>
 </body>
 </html>
