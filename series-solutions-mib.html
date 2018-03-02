@@ -47,16 +47,22 @@ are now following in the footsteps of Isaac Newton.</footnote>
 </p>
 <p>` sum_(n=0)^oo [ (n+2)(n+1) a_(n+2) + a_n ] x^n = 0`
 </p>
-<p>In order for this to be zero, the following quantity must vanish:
+<p>In order for this to be zero, the quantity in brackets above must vanish:
 </p>
 <p>` (n+2)(n+1)a_(n+2) + a_n = 0. `
 </p>
-<p>This is known as a _recurrence relation._ Also note that in this case, the
-terms that are related are spaced two apart in index, so we will have to treat
-odd and even cases separately (starting one set from `a_0` and one set from
-`a_1`).  First we can rearrange the recurrence relation thusly:
+<p>This is known as a <em>recurrence relation.</em> Also note that in this case,
+the terms that are related are spaced two apart in index, so we will have to
+treat odd and even cases separately (starting one set from `a_0` and one set
+from `a_1`).  First we can rearrange the recurrence relation thusly:
 </p>
 <p>` a_(n+2) = - (a_n)/((n+2)(n+1)). `
 </p>
-
+<p>We get the even terms from the relation:
+</p>
+<p>
+` {: ( a_2 = - (a_0)/(2*1) ),
+    (  a_4 = - (a_2)/(4*3) = + (a_0)/(4*3*2*1) ),
+    (  a_6 = - (a_4)/(6*5) = - (a_0)/(6*5*4*3*2*1) ) :} '
+</p>
 </body> </html>
