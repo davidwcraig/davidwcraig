@@ -27,8 +27,8 @@ you do remember that functions can be written as power series: </p>
 
 <p>` f(x) = sum_(n = 0)^oo a_n x^n. `
 </p>
-<p>You think, well, I can deal with this one or two terms at a time.<footnote>You
-are now following in the footsteps of Isaac Newton.</footnote>
+<p>You think, well, I can deal with this one or two terms at a time. <em>You
+are now following in the footsteps of Isaac Newton.</em>
 </p>
 <p>` y'(x) = dy/dx = sum_(n=1)^oo n a_n x^(n-1) `
 </p>
@@ -65,4 +65,45 @@ from `a_1`).  First we can rearrange the recurrence relation thusly:
     (  a_4 = - (a_2)/(4*3) = + (a_0)/(4*3*2*1) ),
     (  a_6 = - (a_4)/(6*5) = - (a_0)/(6*5*4*3*2*1) ) :} `
 </p>
+<p>If we now want to write these with and index spacing of one, and we look at
+the pattern we get for `n = 2k`
+</p>
+<p>`a_(2k) = ( (-1)^k )/(2k!) a_0`, `k = 1,2,3...`
+</p>
+<p>Now the odd ones:
+</p>
+<p>
+` {: ( a_3 = - (a_1)/(3*2) ),
+    (  a_5 = - (a_3)/(5*4) = + (a_1)/(5*4*3*2) ),
+    (  a_7 = - (a_5)/(7*6) = - (a_1)/(7*6*5*4*3*2) ) :} `
+</p>
+<p>Again we look at the pattern and get a single-stepping index for odd numbers.
+Let `n = 2k + 1`:
+</p>
+<p>
+` a_(2k+1) = ( (-1)^k )/( (2k+1)! ) a_1`, `k = 1,2,3...`
+</p>
+<p>
+Now our series looks like this:
+</p>
+<p>
+`y(x) = a_0 + a_1 x - a_0/2! x^2 - a_1/3! x^3 + a_0/4! x^4 + a_1/5! x^5 - cdots`
+</p>
+<p>which we can write</p>
+<p>
+` y(x) = a_0 sum_(n=0)^oo ( (-1)^n )/( (2n)! ) x^(2n) 
+    + a_1 sum_(n=0)^oo ( (-1)^n )/( (2n+1)! ) x^(2n+1) `
+</p>
+<p>
+You may realize these are two independent solutions of our second-order
+differential equation, which is what you expect. Congratulations, you've
+rediscovered the sine and cosine! Now why does this remind you of a small
+talking dog?
+</p>
+<p>
+` y(x) = a_0 cos x + a_1 sin x. `
+</p>
+
+
+
 </body> </html>
