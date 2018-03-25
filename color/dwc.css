@@ -1,0 +1,9 @@
+/* CSS for my WTAMU web page */
+body { font-family: 'Roboto', sans-serif; 
+}
+p {
+    line-height: 1.2;
+}
+p.eq {
+    text-align: center;
+}

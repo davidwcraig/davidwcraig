@@ -1,0 +1,136 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='utf-8'/>
+<title>Urfarben</title>
+<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+<link rel="stylesheet" href="dwc.css" />
+<body>
+<h1>Color</h1>
+
+<p>Color is a fascinating subject, touching on physics, physiology, psychology,
+art, and philosopy. Here I am keeping some notes and references on color.</p>
+
+<figure>
+<canvas id="colorblok" width="720" height = "500"
+style="border:1px solid #000000;">
+If you see this, your browser doesn't support canvas elements.
+</canvas>
+<figcaption>
+“Unique colors” based on the opponent-process model of human color vision 
+from an article by Kuehni. The colors shown are 
+approximations in the sRGB color space to the Munsell values 5R5/14, 5G6/8, 
+5Y8/10, 5PB5/12, N9, and N1. The background is N5. Approximate sRGB values are
+from Werth's 
+<a href="http://www.andrewwerth.com/color/">Virtual Munsell Color Wheel</a>. 
+</figure>
+
+<p>Here are some interesting sites and articles:
+<ol>
+<li> <a href="http://www.huevaluechroma.com/">The Dimensions of Colour, modern
+        colour theory</a> by David Briggs of the Australian National Art School.
+</li> 
+<li> <a href="http://handprint.com/LS/CVS/color.html">color vision</a>
+by Bruce MacEvoy. His <a href="http://handprint.com/">handprint.com</a> 
+website has many interesting things, including a section on watercolors.
+</li>
+<li>
+<a href="http://www.gutenberg.org/files/33504/33504-h/33504-h.htm">Opticks</a>
+by Sir Isaac Newton. From Project Gutenberg.  </li>
+
+<li> Cochrane, S. (2014). The Munsell Color System: A scientific compromise from the world of art. <em>Studies in History and Philosophy of Science, </em>
+47, 26-41. 
+(Full-text available via Cornette Library.)
+</li>
+
+<li> Kuehni, R. (2014). Unique hues and their stimuli—state of the art. 
+<em>Color Research &amp; Application,</em> 39(3), 279-287. 
+(Full-text available via Cornette Library.)
+</li>
+<li> <a href="https://books.google.com/books?id=PgcCAAAAYAAJ&printsec=frontcover&source=gbs_ge_summary_r&hl=en#v=onepage&q&f=false">
+A Color Notation</a> (ebook, public domain, 1905) by Albert Henry Munsell.
+</li>
+<li>
+<a href="http://munsell.com/color-blog/grammar-of-color-munsell-book-online/">
+        A Grammar of Color</a> 
+    Munsell and Cleland, 1921, online version at The
+    Munsell Color Company. Cornette Library also has a reprint of this, but with
+    fewer color pages.
+</li>
+<li> Landa, E. R. (2004). ALBERT H. MUNSELL: A SENSE OF COLOR AT THE INTERFACE OF ART AND SCIENCE. Soil Science, 169(2), 83-89.
+(Full-text available via Cornette Library.)
+</li>
+<li> Andrew Werth's 
+<a href="http://www.andrewwerth.com/color/">Virtual Munsell Color Wheel</a>. 
+</li>
+<li><a href="http://pteromys.melonisland.net/munsell/">Munsell Color Palette</a>
+</li>
+<li><a href="http://munsell.com/color-blog/color-of-flesh/">Munsell and the Color of Flesh</a> (Munsell Color Blog) Humans are basically orange (shades of Munsell YR.)
+</li>
+</ol>
+</p>
+
+<figure>
+<canvas id="skinblok" width="720" height = "500"
+style="border:1px solid #000000;">
+If you see this, your browser doesn't support canvas elements.
+</canvas>
+<figcaption>
+Some random human skin colors. These cover the range of Munsell colors: Hue: 2.5-7.5 YR, 
+Value: 2-7, Chroma 2-4. A high-chroma shade of YR is called “orange” in modern English.
+Appearance will vary with your monitor's color balance.
+</figure>
+
+
+<script> /* script to draw unique color canvas. */
+/* David Craig, 2018-03-24 */
+var canvas = document.getElementById("colorblok");
+var ctx = canvas.getContext("2d");
+ctx.fillStyle = "#888987";  /* Munsell ~N5 for bkgrd */
+ctx.fillRect(0,0,720,500);
+ctx.fillStyle = "#dd414b";  /* unique red munsell 5R5/14 approx */
+ctx.fillRect(50,50,200,200);
+ctx.fillStyle = "#31a87b";  /* unique green munsell 5G6/8 approx */
+ctx.fillRect(50,260,200,200);
+ctx.fillStyle = "#e9c936";  /* unique yellow munsell 5Y8/10 approx */
+ctx.fillRect(260,50,200,200);
+ctx.fillStyle = "#267dce";  /* unique blue munsell 5PB5/12 */
+ctx.fillRect(260,260,200,200);
+ctx.fillStyle = "#e9e8e7";  /* N9, almost white */
+ctx.fillRect(470,50,200,200);
+ctx.fillStyle = "#222221";  /* N1 almost black */
+ctx.fillRect(470,260,200,200);
+</script>
+
+<script> /* script to draw unique color canvas. */
+/* David Craig, 2018-03-24 */
+var canvas = document.getElementById("skinblok");
+var ctx = canvas.getContext("2d");
+var wd = 720;
+var ht = 500;
+// list of Munsell values and sRGB hex for the range
+// of most human skin colors
+var shues = [
+// 2.5YR V:2-7 C:2:4
+"#412d27", "#5b433b", "#745c53", "#8d766d", "#a89086", "#c1aba1", "#4d271d",
+"#673e2f", "#825745", "#9c715f", "#b78c78", "#d2a691",
+// 5YR V:2-7 C:2:4
+"#402d25", "#594439", "#735d50", "#8c776a", "#a79183", "#c1ab9e", "#4b2917",
+"#65402a", "#805840", "#9a7359", "#b58d72", "#d0a78b",
+// 7.5YR V:2-7 C:2:4
+"#3f2e23", "#584537", "#725d4e", "#8b7768", "#a69281", "#c0ac9b", "#482b12",
+"#624226", "#7e5a3b", "#987455", "#b38e6e", "#cea986"
+];
+ctx.fillStyle = "#888987";  /* Munsell ~N5 for bkgrd */
+ctx.fillRect(0,0,720,500); // fill in background
+for(i=0; i<1400; i++) { //loop of random skin hues
+	shue = shues[Math.floor(Math.random()*shues.length)];
+	x = Math.floor(Math.random()*wd);
+	y = Math.floor(Math.random()*ht);
+	ctx.fillStyle = shue;
+	ctx.fillRect(x,y,12,20); //put a block of color somewhere
+}
+
+</script>
+</body>
+</html>
